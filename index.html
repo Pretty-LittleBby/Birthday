@@ -1090,6 +1090,9 @@ body {
 </style>
 
 <body>
+    <audio id="bgMusic" loop>
+    <source src="./Barbaad.mp3" type="audio/mpeg">
+</audio>
     <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
@@ -1330,6 +1333,9 @@ body {
     document.getElementById("btn__edit").addEventListener("click", function () {
     window.location.href = "edit.html";
 });
+document.addEventListener("click", () => {
+    document.getElementById("bgMusic").play();
+}, { once: true });
 </script>
 
 </html>
