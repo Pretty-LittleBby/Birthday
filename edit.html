@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Something For You ❤️</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffccd5,#ffc2d1,#ffe5ec);
+    padding:20px;
+    position:relative;
+    overflow-x:hidden;
+}
+
+h1{
+    color:#fff;
+    font-size:clamp(1.8rem,5vw,3rem);
+    margin-bottom:20px;
+    text-align:center;
+    text-shadow:0 0 15px #ff5d8f;
+    animation:fade 1.5s;
+    z-index:2;
+}
+
+video{
+    width:min(90vw,420px);
+    height:auto;
+    max-height:70vh;
+    border-radius:20px;
+    background:#000;
+    object-fit:contain;
+    box-shadow:0 10px 35px rgba(255,120,130,.5);
+    z-index:2;
+}
+
+.back{
+    margin-top:25px;
+    padding:12px 30px;
+    border-radius:50px;
+    background:#ff5d8f;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    z-index:2;
+}
+
+.back:hover{
+    background:#ff3f75;
+    transform:translateY(-3px) scale(1.05);
+}
+
+.heart{
+    position:absolute;
+    color:#ff4f73;
+    animation:float linear infinite;
+    pointer-events:none;
+    z-index:1;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Large Desktop */
+@media (min-width:1200px){
+    video{
+        width:420px;
+        max-height:75vh;
+    }
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    h1{
+        margin-bottom:18px;
+    }
+
+    video{
+        width:85vw;
+        max-height:65vh;
+    }
+
+    .back{
+        margin-top:20px;
+        padding:10px 24px;
+        font-size:15px;
+    }
+}
+
+/* Small Phones */
+@media (max-width:480px){
+
+    body{
+        padding:12px;
+    }
+
+    h1{
+        font-size:1.6rem;
+        margin-bottom:15px;
+    }
+
+    video{
+        width:92vw;
+        max-height:60vh;
+        border-radius:15px;
+    }
+
+    .back{
+        width:90%;
+        text-align:center;
+        padding:12px;
+        font-size:14px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>❤️ Something For You ❤️</h1>
+
+<video controls autoplay playsinline preload="metadata">
+    <source src="./edit.mp4" type="video/mp4">
+</video>
+
+<a href="index.html" class="back">⬅ Back</a>
+
+<script>
+
+for(let i=0;i<30;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=5+Math.random()*5+"s";
+
+h.style.fontSize=15+Math.random()*30+"px";
+
+h.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+</body>
+</html>
